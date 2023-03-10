@@ -331,13 +331,13 @@ func (s *ServiceConfig) Export() error {
 	return nil
 }
 
-//setRegistrySubURL set registry sub url is ivkURl
+// setRegistrySubURL set registry sub url is ivkURl
 func setRegistrySubURL(ivkURL *common.URL, regUrl *common.URL) {
 	ivkURL.AddParam(constant.RegistryKey, regUrl.GetParam(constant.RegistryKey, ""))
 	regUrl.SubURL = ivkURL
 }
 
-//loadProtocol filter protocols by ids
+// loadProtocol filter protocols by ids
 func loadProtocol(protocolIds []string, protocols map[string]*ProtocolConfig) []*ProtocolConfig {
 	returnProtocols := make([]*ProtocolConfig, 0, len(protocols))
 	for _, v := range protocolIds {
